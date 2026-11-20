@@ -61,3 +61,8 @@ var orns=document.querySelectorAll('[data-sp]'),tk=false;
 addEventListener('scroll',function(){if(tk)return;tk=true;requestAnimationFrame(function(){var y=scrollY;orns.forEach(function(o){var s=parseFloat(o.dataset.sp),fl=o.classList.contains('tr')?'scaleX(-1)':o.classList.contains('bl')?'scaleY(-1)':o.classList.contains('br')?'scale(-1,-1)':'';o.style.transform='translateY('+(y*s)+'px) '+fl});tk=false})},{passive:true});
 /* bunga latar yang tetap saat scroll */
 document.body.insertAdjacentHTML('afterbegin','<div class="bg-fix" aria-hidden="true"><svg class="orn tl"><use href="#corner"/></svg><svg class="orn tr"><use href="#corner"/></svg><svg class="orn bl"><use href="#corner"/></svg><svg class="orn br"><use href="#corner"/></svg></div>');
+/* bunga banyak di tengah: tetap, tidak ikut gulir, bergerak pelan */
+(function(){var L=[[50,12,46],[22,22,34],[78,20,40],[10,40,30],[90,44,36],[36,34,52],[64,38,28],[50,52,60],[18,60,40],[84,62,32],[34,72,36],[66,74,48],[50,88,34],[8,80,26],[92,82,30],[26,48,24],[74,52,26],[44,64,22]],h='';
+L.forEach(function(a,i){var o=(.22+(i%4)*.05).toFixed(2),d=(7+(i%5)*1.3).toFixed(1),l=(-(i*1.7%9)).toFixed(1);
+h+='<svg class="fx" viewBox="-36 -36 72 72" style="left:'+a[0]+'%;top:'+a[1]+'%;width:'+a[2]+'px;height:'+a[2]+'px;margin:-'+a[2]/2+'px 0 0 -'+a[2]/2+'px;opacity:'+o+';animation-duration:'+d+'s;animation-delay:'+l+'s"><use href="#fl"/></svg>'});
+document.querySelector('.bg-fix').insertAdjacentHTML('beforeend',h)})();
