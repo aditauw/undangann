@@ -5,7 +5,7 @@ var CFG={
  address:"Jl. Raya Cadas - Kukun, Jl. Duta Asri Palem 2 No.Perumahan, Kampung Leles, Pangadegan, Kec. Ps. Kemis, Kabupaten Tangerang, Banten 15560",
  mapQuery:"Cluster Duta Asri Palem 2, Pasar Kemis, Tangerang",
  api:"", // backend PHP (opsional, untuk hosting PHP). Kosongkan jika pakai Supabase
- sb:{url:"",key:""}, // Supabase: isi Project URL dan publishable/anon key (lihat README)
+ sb:{url:"https://gjdlbwhjpxjdaevcmwro.supabase.co",key:"sb_publishable_hVX-OTB3nAo7bClngkRmTQ__PqwV4Ha"}, // Supabase: isi Project URL dan publishable/anon key (lihat README)
  musicUrl:"", // isi data: URI / URL audio sendiri bila ada; kosong = musik instrumental bawaan
  photoBride:"",photoGroom:"", // contoh: "assets/images/bride.jpg"
  gallery:[] // isi dengan data: URI foto, mis. ["data:image/jpeg;base64,..."]
