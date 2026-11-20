@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Wedding of Bilal & Kayla</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="lock">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<filter id="wc" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency=".04" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="7"/><feGaussianBlur stdDeviation=".8"/></filter>
+<g id="fl"><g fill="#243B64" fill-opacity=".5"><ellipse cx="0" cy="-17" rx="9" ry="17"/><ellipse cx="0" cy="-17" rx="9" ry="17" transform="rotate(60)"/><ellipse cx="0" cy="-17" rx="9" ry="17" transform="rotate(120)"/><ellipse cx="0" cy="-17" rx="9" ry="17" transform="rotate(180)"/><ellipse cx="0" cy="-17" rx="9" ry="17" transform="rotate(240)"/><ellipse cx="0" cy="-17" rx="9" ry="17" transform="rotate(300)"/></g><circle r="5" fill="#B9CDDF"/><circle r="2" fill="#FAF9F6"/></g>
+<symbol id="corner" viewBox="0 0 220 220"><g filter="url(#wc)">
+<path d="M0 30 C60 40 110 90 150 190" stroke="#7E9BB9" stroke-width="2" fill="none" opacity=".7"/>
+<g fill="#7E9BB9" fill-opacity=".45"><circle cx="40" cy="55" r="12"/><circle cx="70" cy="78" r="13"/><circle cx="98" cy="108" r="12"/><circle cx="122" cy="145" r="11"/><circle cx="26" cy="86" r="10"/><circle cx="55" cy="112" r="11"/></g>
+<g fill="#B9CDDF" fill-opacity=".7"><ellipse cx="90" cy="40" rx="22" ry="8" transform="rotate(25 90 40)"/><ellipse cx="30" cy="140" rx="8" ry="22" transform="rotate(-20 30 140)"/><ellipse cx="150" cy="95" rx="20" ry="7" transform="rotate(50 150 95)"/></g>
+<use href="#fl" transform="translate(48 46) scale(1.35)"/><use href="#fl" transform="translate(112 74) scale(.85) rotate(20)"/><use href="#fl" transform="translate(30 122) scale(.7) rotate(40)"/></g></symbol>
+</defs></svg>
+
+<div id="cover">
+ <svg class="orn tl"><use href="#corner"/></svg><svg class="orn br"><use href="#corner"/></svg>
+ <div class="in">
+  <div class="small">The Wedding Of</div>
+  <h1><span class="n">Mohammad Septian Al Bilal</span><span class="amp">&amp;</span><span class="n">Kayla Fadya Nurul Aulia</span></h1>
+  <div class="date" data-date>30 Januari 2027</div>
+  <div class="guest"><span class="small">Kepada Yth.</span><b id="guest">Tamu Undangan</b></div>
+  <button class="btn" id="openBtn">Buka Undangan</button>
+ </div>
+</div>
+
+<button id="mus" aria-label="Putar atau jeda musik"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></button>
+
+<main>
+<section id="hero">
+ <svg class="orn tl" data-sp=".05"><use href="#corner"/></svg><svg class="orn tr" data-sp=".05"><use href="#corner"/></svg><svg class="orn bl" data-sp="-.05"><use href="#corner"/></svg><svg class="orn br" data-sp="-.05"><use href="#corner"/></svg>
+ <div class="in rv">
+  <div class="small">The Wedding Of</div>
+  <div class="script big">Bilal<br><span style="font-size:.5em;color:var(--dusty)">&amp;</span><br>Kayla</div>
+  <div class="date" data-date>30 Januari 2027</div>
+  <div class="cd" id="cd"><div><b>--</b><span>HARI</span></div><div><b>--</b><span>JAM</span></div><div><b>--</b><span>MENIT</span></div><div><b>--</b><span>DETIK</span></div></div>
+  <p id="cdmsg" style="margin-top:14px;color:var(--dusty)"></p>
+ </div>
+</section>
+
+<section class="rv">
+ <div class="quote"><p>“Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.”</p><cite>QS. Ar-Rum: 21</cite></div>
+</section>
+
+<section>
+ <h2 class="rv">Mempelai</h2>
+ <div class="pf">
+  <div class="rv"><div class="ph"><div id="p1"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-5 15-5 16 0"/></svg></div></div>
+   <h3>Mohammad Septian Al Bilal</h3><p>Putra dari Bapak [NAMA AYAH]<br>dan Ibu [NAMA IBU]</p></div>
+  <div class="rv"><div class="ph"><div id="p2"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-5 15-5 16 0"/></svg></div></div>
+   <h3>Kayla Fadya Nurul Aulia</h3><p>Putri dari Bapak [NAMA AYAH]<br>dan Ibu [NAMA IBU]</p></div>
+ </div>
+</section>
+
+<section id="acara">
+ <h2 class="rv">Detail Acara</h2>
+ <div class="ev">
+  <div class="card rv"><h3>Akad Nikah</h3>
+   <div class="li"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>Sabtu, 30 Januari 2027</span></div>
+   <div class="li"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>[JAM AKAD]</span></div>
+   <div class="li"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Cluster Duta Asri Palem 2, Pasar Kemis, Tangerang</span></div></div>
+  <div class="card rv"><h3>Resepsi</h3>
+   <div class="li"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>Sabtu, 30 Januari 2027</span></div>
+   <div class="li"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>[JAM RESEPSI]</span></div>
+   <div class="li"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Cluster Duta Asri Palem 2, Pasar Kemis, Tangerang</span></div></div>
+ </div>
+ <div class="row rv"><a class="btn o" id="calBtn" target="_blank" rel="noopener">Simpan ke Kalender</a></div>
+</section>
+
+<section id="lokasi">
+ <h2 class="rv">Lokasi Acara</h2>
+ <p class="rv" id="addr"></p>
+ <iframe class="map rv" id="map" title="Peta lokasi acara" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+ <div class="row rv"><a class="btn" id="mapBtn" target="_blank" rel="noopener">Buka Google Maps</a><a class="btn o" id="dirBtn" target="_blank" rel="noopener">Petunjuk Arah</a></div>
+ <div class="rv"><div id="qr"></div><div class="small" style="margin-top:8px">Pindai untuk membuka lokasi</div></div>
+</section>
+
+<section>
+ <h2 class="rv">Galeri</h2>
+ <div class="gal" id="gal"></div>
+</section>
+
+<section id="rsvp">
+ <h2 class="rv">Konfirmasi Kehadiran</h2>
+ <form id="rf" class="rv">
+  <label for="rn">Nama</label><input id="rn" required maxlength="60">
+  <label for="rj">Jumlah tamu</label><select id="rj"><option>1</option><option>2</option><option>3</option><option>4</option></select>
+  <label for="rk">Kehadiran</label><select id="rk"><option>Hadir</option><option>Tidak Hadir</option></select>
+  <label for="rp">Pesan untuk pengantin</label><textarea id="rp" rows="3" maxlength="300"></textarea>
+  <button class="btn" type="submit">Kirim Konfirmasi</button><div class="ok" id="rok" role="status"></div>
+ </form>
+</section>
+
+<section>
+ <h2 class="rv">Ucapan &amp; Doa</h2>
+ <form id="wf" class="rv">
+  <label for="wn">Nama</label><input id="wn" required maxlength="60">
+  <label for="wm">Ucapan dan doa</label><textarea id="wm" rows="3" required maxlength="300"></textarea>
+  <button class="btn" type="submit">Kirim Ucapan</button>
+ </form>
+ <div class="wishes" id="wl"></div>
+</section>
+</main>
+
+<footer>
+ <svg class="orn bl"><use href="#corner"/></svg><svg class="orn br"><use href="#corner"/></svg>
+ <div class="in rv">
+  <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu.</p>
+  <p>Terima kasih atas doa dan restunya.</p>
+  <div class="names">Mohammad Septian Al Bilal<br>&amp; Kayla Fadya Nurul Aulia</div>
+ </div>
+</footer>
+
+<div id="lb"><button aria-label="Tutup">&times;</button><div class="box" id="lbc"></div></div>
+
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
