@@ -92,7 +92,7 @@
  <h2 class="rv">Konfirmasi Kehadiran</h2>
  <form id="rf" class="rv">
   <label for="rn">Nama</label><input id="rn" required maxlength="60">
-  <label for="rj">Jumlah tamu</label><select id="rj"><option>1</option><option>2</option><option>3</option><option>4</option></select>
+  <label for="rj">Jumlah tamu</label><input id="rj" type="number" min="1" step="1" value="1" inputmode="numeric" required>
   <label for="rk">Kehadiran</label><select id="rk"><option>Hadir</option><option>Tidak Hadir</option></select>
   <label for="rp">Pesan untuk pengantin</label><textarea id="rp" rows="3" maxlength="300"></textarea>
   <button class="btn" type="submit">Kirim Konfirmasi</button><div class="ok" id="rok" role="status"></div>
