@@ -15,7 +15,7 @@ try{new QRCode($('#qr'),{text:mapUrl,width:160,height:160,colorDark:'#243B64',co
 /* kalender */
 (function(){var f=function(d){return d.toISOString().replace(/[-:]|\.\d{3}/g,'')};var p='';
 if(CFG.date){var s=new Date(CFG.date);p='&dates='+f(s)+'/'+f(new Date(+s+3*36e5))}
-$('#calBtn').href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent('Pernikahan Septian & Kayla')+p+'&location='+q+'&details='+encodeURIComponent('Akad Nikah & Resepsi Mohammad Septian Al Bilal & Kayla Fadya Nurul Aulia')})();
+$('#calBtn').href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent('Pernikahan Bilal & Kayla')+p+'&location='+q+'&details='+encodeURIComponent('Akad Nikah & Resepsi Mohammad Septian Al Bilal & Kayla Fadya Nurul Aulia')})();
 /* countdown */
 (function(){if(!CFG.date)return;var t=new Date(CFG.date).getTime(),b=document.querySelectorAll('#cd b');
 function tick(){var d=t-Date.now();if(d<=0){b.forEach(function(x){x.textContent='0'});$('#cdmsg').textContent='Hari bahagia telah tiba';return}
