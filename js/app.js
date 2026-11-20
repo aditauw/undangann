@@ -30,18 +30,20 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')$('#lb').cla
 /* penyimpanan lokal (demo; ganti dengan backend bila ada) */
 function ld(k){try{return JSON.parse(localStorage.getItem(k)||'[]')}catch(e){return[]}}
 function sv(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
-function post(o){return CFG.api?fetch(CFG.api,{method:'POST',body:JSON.stringify(o)}).then(function(r){if(!r.ok)throw 0;return r}):Promise.resolve()}
+var SB=function(){return CFG.sb&&CFG.sb.url&&CFG.sb.key};var BE=function(){return SB()||CFG.api};
+function sbh(){return{apikey:CFG.sb.key,'Content-Type':'application/json',Prefer:'return=minimal'}}
+function post(o){if(SB()){var r=o.type==='rsvp';return fetch(CFG.sb.url+'/rest/v1/'+(r?'rsvp':'ucapan'),{method:'POST',headers:sbh(),body:JSON.stringify(r?{nama:o.n,jumlah:+o.j,kehadiran:o.k,pesan:o.p}:{nama:o.n,pesan:o.m})}).then(function(x){if(!x.ok)throw 0;return x})}return CFG.api?fetch(CFG.api,{method:'POST',body:JSON.stringify(o)}).then(function(r){if(!r.ok)throw 0;return r}):Promise.resolve()}
 $('#rf').onsubmit=function(e){e.preventDefault();var f=this,o={type:'rsvp',n:$('#rn').value,j:$('#rj').value,k:$('#rk').value,p:$('#rp').value},m=$('#rok');m.textContent='Mengirim...';
-if(!CFG.api){var a=ld('rsvp');a.push(o);sv('rsvp',a)}
+if(!BE()){var a=ld('rsvp');a.push(o);sv('rsvp',a)}
 post(o).then(function(){m.textContent='Terima kasih, konfirmasi Anda sudah terkirim.';f.reset()}).catch(function(){m.textContent='Gagal mengirim, coba lagi.'})};
 function draw(a,loc){var l=$('#wl');l.innerHTML='';var s=!a.length;if(s)a=[{n:'Keluarga & Sahabat',m:'Barakallahu lakuma wa baraka alaikuma. Semoga sakinah, mawaddah, warahmah.',d:'Contoh ucapan'}];
 a.map(function(x,i){return{x:x,i:i}}).reverse().forEach(function(o){var x=o.x,d=document.createElement('div');d.className='w';var b=document.createElement('b'),p=document.createElement('div'),t=document.createElement('small');b.textContent=x.n;p.textContent=x.m;t.textContent=x.d;d.append(b,p,t);
 if(loc&&!s){var r=document.createElement('button');r.textContent='Hapus';r.className='del';r.onclick=function(){var z=ld('wish');z.splice(o.i,1);sv('wish',z);wl()};d.appendChild(r)}
 l.appendChild(d)})}
-function wl(){if(!CFG.api)return draw(ld('wish'),true);fetch(CFG.api).then(function(r){return r.json()}).then(function(a){draw(a,false)}).catch(function(){draw([],false)})}
+function wl(){if(!BE())return draw(ld('wish'),true);if(SB())return fetch(CFG.sb.url+'/rest/v1/ucapan?select=nama,pesan,created_at&order=id.desc&limit=100',{headers:{apikey:CFG.sb.key}}).then(function(r){return r.json()}).then(function(a){draw(a.reverse().map(function(x){return{n:x.nama,m:x.pesan,d:new Date(x.created_at).toLocaleDateString('id-ID')}}),false)}).catch(function(){draw([],false)});fetch(CFG.api).then(function(r){return r.json()}).then(function(a){draw(a,false)}).catch(function(){draw([],false)})}
 $('#wf').onsubmit=function(e){e.preventDefault();var f=this,o={type:'wish',n:$('#wn').value,m:$('#wm').value};
-if(!CFG.api){var a=ld('wish');a.push({n:o.n,m:o.m,d:new Date().toLocaleDateString('id-ID')});sv('wish',a)}
-post(o).then(function(){f.reset();setTimeout(wl,CFG.api?1200:0)})};wl();
+if(!BE()){var a=ld('wish');a.push({n:o.n,m:o.m,d:new Date().toLocaleDateString('id-ID')});sv('wish',a)}
+post(o).then(function(){f.reset();setTimeout(wl,BE()?800:0)})};wl();
 /* musik instrumental (WebAudio) */
 var ac,tm,playing=false,mb=$('#mus'),au;
 function note(f,t,d,v){var o=ac.createOscillator(),g=ac.createGain();o.type='sine';o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.05);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(ac.destination);o.start(t);o.stop(t+d)}
