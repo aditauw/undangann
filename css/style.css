@@ -84,10 +84,8 @@ main,footer{position:relative;z-index:1}
 main .orn,footer .orn{display:none}
 .del{display:block;margin-top:6px;background:none;border:0;color:#b04a4a;cursor:pointer;font:inherit;font-size:.85rem;padding:4px 0}
 
-/* animasi bunga sudut */
-.tl{transform-origin:0 0}.tr{transform-origin:100% 0}.bl{transform-origin:0 100%}.br{transform-origin:100% 100%}
-.bg-fix .orn,#cover .orn{animation:sway 7s ease-in-out infinite alternate}
-.bg-fix .tr{animation-duration:8.5s;animation-delay:-2s}.bg-fix .bl{animation-duration:9s;animation-delay:-4s}.bg-fix .br{animation-duration:7.5s;animation-delay:-1s}
+/* animasi bunga sudut: sama untuk keempat pojok, berayun dari ujung pojok */
+.bg-fix .orn use,#cover .orn use{transform-origin:0 0;animation:sway 7s ease-in-out infinite alternate}
 @keyframes sway{from{rotate:-3deg;scale:1}to{rotate:3deg;scale:1.05}}
 /* bunga tengah, tetap di layar saat scroll */
 .fx{position:fixed;display:block;pointer-events:none;animation:fl 9s ease-in-out infinite alternate}
