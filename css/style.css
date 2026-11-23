@@ -110,3 +110,12 @@ main .orn,footer .orn{display:none}
 #lb .lbn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;min-width:46px;border-radius:50%;background:rgba(255,255,255,.16);font-size:1.8rem;line-height:1;display:grid;place-items:center}
 #lb .lbn.p{left:12px;right:auto}#lb .lbn.n{right:12px}
 #lb .lbn:hover{background:rgba(255,255,255,.3)}
+
+/* ===== Galeri tanpa terpotong (tempel di paling bawah style.css, setelah galeri.css) ===== */
+.gal2{display:block;columns:2;column-gap:10px}
+@media(min-width:700px){.gal2{columns:3}}
+.gal2 .g2{display:block;width:100%;height:auto;margin:0 0 10px;break-inside:avoid}
+.gal2 .g2:not(:has(img)){aspect-ratio:4/5;display:grid}
+.gal2 .g2 img{position:static;display:block;width:100%;height:auto;object-fit:contain}
+#lbc:has(img){aspect-ratio:auto;width:auto;max-width:92vw}
+#lb img{max-width:92vw;max-height:82vh;object-fit:contain}
