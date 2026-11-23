@@ -66,3 +66,25 @@ document.body.insertAdjacentHTML('afterbegin','<div class="bg-fix" aria-hidden="
 L.forEach(function(a,i){var o=(.22+(i%4)*.05).toFixed(2),d=(7+(i%5)*1.3).toFixed(1),l=(-(i*1.7%9)).toFixed(1);
 h+='<svg class="fx" viewBox="-36 -36 72 72" style="left:'+a[0]+'%;top:'+a[1]+'%;width:'+a[2]+'px;height:'+a[2]+'px;margin:-'+a[2]/2+'px 0 0 -'+a[2]/2+'px;opacity:'+o+';animation-duration:'+d+'s;animation-delay:'+l+'s"><use href="#fl"/></svg>'});
 document.querySelector('.bg-fix').insertAdjacentHTML('beforeend',h)})();
+
+/* ===== Galeri v2 (tempel di paling bawah app.js) ===== */
+(function(){
+var g=$('#gal'),lb=$('#lb'),lbc=$('#lbc'),cur=0,
+bg=['linear-gradient(145deg,#B9CDDF,#7E9BB9)','linear-gradient(145deg,#D9DEE5,#B9CDDF)','linear-gradient(160deg,#7E9BB9,#243B64)','linear-gradient(145deg,#B9CDDF,#D9DEE5)','linear-gradient(145deg,#9fb6cf,#5f7ea6)','linear-gradient(145deg,#D9DEE5,#9fb6cf)'],
+n=Math.max(6,CFG.gallery.length);
+g.innerHTML='';g.classList.add('gal2');
+function show(i){cur=(i+n)%n;var s=CFG.gallery[cur];lbc.innerHTML='';
+ if(s){lbc.style.background='none';var im=new Image();im.src=s;im.alt='Foto prewedding '+(cur+1);lbc.appendChild(im)}
+ else{lbc.style.background=bg[cur%6];lbc.textContent='Foto '+(cur+1)}
+ lb.classList.add('on')}
+for(var i=0;i<n;i++){(function(i){var b=document.createElement('button'),s=CFG.gallery[i];b.className='g2 rv';b.setAttribute('aria-label','Foto '+(i+1));b.style.transitionDelay=(i%3)*90+'ms';
+ if(s){var im=new Image();im.src=s;im.alt='Foto prewedding '+(i+1);im.loading='lazy';b.appendChild(im)}
+ else{b.style.background=bg[i%6];b.innerHTML='<span class="pl"><svg viewBox="-30 -30 60 60"><use href="#fl"/></svg>Foto '+(i+1)+'</span>'}
+ b.onclick=function(){show(i)};g.appendChild(b);io.observe(b)})(i)}
+['p','n'].forEach(function(k){var b=document.createElement('button');b.className='lbn '+k;b.textContent=k==='p'?'‹':'›';b.setAttribute('aria-label',k==='p'?'Sebelumnya':'Berikutnya');b.onclick=function(e){e.stopPropagation();show(cur+(k==='p'?-1:1))};lb.appendChild(b)});
+lb.querySelector('button').classList.add('x');
+lb.onclick=function(e){if(e.target===lb||e.target.classList.contains('x'))lb.classList.remove('on')};
+document.addEventListener('keydown',function(e){if(!lb.classList.contains('on'))return;if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)});
+var sx=0;lb.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
+lb.addEventListener('touchend',function(e){var d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>50)show(cur+(d<0?1:-1))});
+})();
