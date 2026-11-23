@@ -8,5 +8,5 @@ var CFG={
  sb:{url:"https://gjdlbwhjpxjdaevcmwro.supabase.co",key:"sb_publishable_hVX-OTB3nAo7bClngkRmTQ__PqwV4Ha"}, // Supabase: isi Project URL dan publishable/anon key (lihat README)
  musicUrl:"assets/audio/1121.mp3", // isi data: URI / URL audio sendiri bila ada; kosong = musik instrumental bawaan
  photoBride:"",photoGroom:"", // contoh: "assets/images/bride.jpg"
- gallery:[] // isi dengan data: URI foto, mis. ["data:image/jpeg;base64,..."]
+ gallery:["assets/images/foto 1.JPG.jpeg","assets/images/foto2.jpg","assets/images/foto3.jpg","assets/images/foto4.jpg","assets/images/foto5.jpg","assets/images/foto 6.JPG.jpeg"]
 };
