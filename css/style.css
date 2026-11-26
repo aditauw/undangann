@@ -119,3 +119,20 @@ main .orn,footer .orn{display:none}
 .gal2 .g2 img{position:static;display:block;width:100%;height:auto;object-fit:contain}
 #lbc:has(img){aspect-ratio:auto;width:auto;max-width:92vw}
 #lb img{max-width:92vw;max-height:82vh;object-fit:contain}
+
+/* ===== Hadiah (tempel di paling bawah style.css) ===== */
+.gift{position:relative;overflow:hidden;max-width:360px;aspect-ratio:1.586;margin:28px auto 6px;padding:22px 24px;border-radius:20px;color:#fff;text-align:left;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(135deg,#243B64 0%,#35527f 55%,#7E9BB9 135%);box-shadow:0 24px 40px -22px rgba(36,59,100,.8),inset 0 0 0 1px rgba(255,255,255,.2);transition:transform .5s}
+.gift:hover{transform:translateY(-4px) rotate(-.6deg)}
+.gift::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 15% 0%,rgba(255,255,255,.24),transparent 55%);pointer-events:none}
+.gift .gw{position:absolute;right:-44px;bottom:-56px;width:220px;height:220px;opacity:.14;pointer-events:none}
+.gt{position:relative;display:flex;justify-content:space-between;align-items:center}
+.bk{font-weight:600;font-size:1.5rem;letter-spacing:.2em}
+.gn{position:relative;font-size:clamp(1.3rem,6.4vw,1.75rem);letter-spacing:.12em;font-weight:600;font-variant-numeric:lining-nums tabular-nums;white-space:nowrap}
+.gh{position:relative}
+.gh small{display:block;letter-spacing:.22em;font-size:.66rem;text-transform:uppercase;opacity:.75}
+.gh b{font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:.95rem}
+.toast{position:fixed;left:50%;bottom:calc(30px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--navy);color:#fff;padding:10px 22px;border-radius:30px;opacity:0;pointer-events:none;transition:.4s;z-index:70;font-size:.95rem;white-space:nowrap}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* perbaikan: tombol outline tetap terbaca saat disentuh/hover */
+.btn.o:hover{background:var(--dusty);border-color:var(--dusty);color:#fff}
